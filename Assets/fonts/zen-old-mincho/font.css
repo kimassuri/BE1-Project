@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("../fonts/zen-old-mincho/ZenOldMincho-Regular.woff2") format("woff2"),
+    url("../fonts/zen-old-mincho/ZenOldMincho-Regular.woff") format("woff"),
+    url("../fonts/zen-old-mincho/ZenOldMincho-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("../fonts/zen-old-mincho/ZenOldMincho-Bold.woff2") format("woff2"),
+    url("../fonts/zen-old-mincho/ZenOldMincho-Bold.woff") format("woff"),
+    url("../fonts/zen-old-mincho/ZenOldMincho-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

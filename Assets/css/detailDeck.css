@@ -1,0 +1,138 @@
+.home-container {
+    width: 100%;
+    height: 80vh;
+}
+.card-cotainer {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+}
+
+.deck .info {
+    display: flex;
+    width: 50%;
+    margin-left: 150px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.stack {
+    height: 500px;
+    position: relative;
+}
+
+.card {
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2rem;
+    font-family: sans-serif;
+    font-size: 10rem;
+    color: #00000080;
+    box-shadow: 0 5px 10px 0 #00000040, 0 15px 20px 0 #00000020;
+    transition: transform 200ms;
+    perspective: 1000px; /* Tạo hiệu ứng 3D */
+
+}
+
+/* Hiệu ứng lật mặt */
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.card:hover .card-inner,
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: #fff;
+    color: #333;
+}
+
+.card-back {
+    background: #89869e;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card p {
+    font-size: 1.8rem;
+    margin: 0;
+}
+.deck {
+    margin-top: 25px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card:nth-last-child(2) {
+    --y: calc(-50% + 15px);
+    transform: translate(-50%, var(--y)) scale(1.05);
+}
+
+.card:nth-last-child(1) {
+    --y: calc(-50% + 15px);
+    transform: translate(-50%, var(--y)) scale(1.05);
+}
+
+
+@keyframes swapN {
+    50% {
+    transform: translate(calc(var(--y) + 350px), -100%) scale(0.85) rotate(45deg);
+    animation-timing-function: ease-in;
+}
+    100% {
+    transform: translate( calc(var(--y) - 15px), -100%) scale(0.85);
+    z-index: -1;
+    }
+}
+
+.deck .info .like {
+    font-size: 25px;
+}
+
+.deck .info p {
+    color: rgb(117, 116, 116);
+}
+.deck .info .function {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    transition: 2s ease-in-out;
+
+}
+.deck .info .function i {
+    font-size: 15px;
+    
+}
+.deck .info .function .btn:hover {
+    box-shadow:  0px 4px rgba(90, 167, 245, 0.76);
+}

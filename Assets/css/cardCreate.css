@@ -1,0 +1,86 @@
+* {
+    padding: 0 10px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "RobotoMono-Bold", monospace;
+}
+.form-block {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.form-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.image-box {
+    border: 1px dashed #ccc;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #888;
+}
+
+
+.container-form {
+    width: 100%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tạo viền màu vàng khi input được focus */
+.form-control:focus {
+    box-shadow: 1px 1px #02ee26;
+}
+
+.nav-form {
+    width: 90%;
+    height: max-content;
+    position: fixed;
+    top: 0;
+    margin: auto;
+    z-index: 999;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px 20px;
+}
+#deck-name {
+    width: 50%;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 100px;
+    z-index: 999;
+}
+.btn-wrapper {
+    display: block;
+    text-align: end;
+}
+
+.delete-btn {
+    border:1px solid #ff4d4d;
+    color:#ff4d4d;
+    padding:3px 12px;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #e63939;
+    color: #fff;
+}
+
+.bi {
+    font-size: 20px; /* Kích thước icon */
+    color: #ff4d4d; /* Màu icon */
+}

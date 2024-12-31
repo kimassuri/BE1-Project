@@ -1,0 +1,214 @@
+* {
+  padding: 0 10px;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "RobotoMono-Bold", monospace;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+html {
+  font-size: 16px;
+}
+
+.navbar,
+.navbar-brand {
+  font-size: 1.5rem;
+}
+.navbar-brand {
+  user-select: none;
+}
+.banner {
+  margin-top: 100px;
+  height: 90vh;
+  width: 80%;
+}
+
+.container-banner {
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(to right, #2b86c5, #784ba0, #ff3cac);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.text {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.cards {
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+/* Các thẻ với các góc nghiêng khác nhau */
+.card {
+  width: 140px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform-origin: center;
+  transition: all 0.3s ease;
+  perspective: 1000px; /* Thêm hiệu ứng 3D cho không gian */
+  transform: rotate(-20deg); /* Thêm hiệu ứng nghiêng cho các thẻ */
+}
+
+/* Các mặt của thẻ bài */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: absolute;
+}
+.card .img img {
+  user-select: none;
+  width: 100%;
+  height: 60%;
+  align-items: center;
+  display: flex;
+  border-radius: 12px;
+
+}
+
+.card .img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Thẻ nghiêng với các góc khác nhau */
+.card:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.card:nth-child(2) {
+  transform: rotate(20deg);
+  position: relative;
+  top: -100px;
+}
+
+.card:nth-child(3) {
+  position: relative;
+  bottom: -20px;
+  transform: rotate(45deg);
+}
+
+.card .img {
+  background-color: #ffffff;
+}
+
+.card .back {
+  background: linear-gradient(to right,  #f3dcfb, #679fe4);
+  transform: rotateY(180deg);
+}
+
+
+/* Tạo hình tròn dẹp dưới các thẻ */
+.ellipse {
+  width: 300px;
+  height: 150px;
+  background-color: transparent; /* Làm phần giữa hình tròn dẹt trong suốt */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  border: 1px solid #ffffff; /* Viền màu cam */
+  animation: glowEffect 2s infinite; /* Áp dụng animation cho ellipse */
+}
+/* Tạo hình tròn dẹp nhỏ */
+.ellipse-small {
+  width: 200px; /* Kích thước ellipse nhỏ */
+  height: 100px;
+  background-color: transparent; /* Giữ phần giữa trong suốt */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0px; /* Vị trí ellipse nhỏ hơn */
+  left: 50%;
+  transform: translateX(-50%); /* Căn giữa */
+  border: 1px solid #6e6b6b;
+  animation: glowEffect 5s infinite; /* Áp dụng animation cho ellipse */
+  z-index: 2; /* Đặt ellipse nhỏ ở trên */
+}
+/* Định nghĩa keyframes cho hiệu ứng glow */
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+  20% {
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 100px rgb(255, 255, 255);
+  }
+  60% {
+    box-shadow: 0 0 60px rgba(155, 151, 151, 0.7);
+  }
+  80% {
+    box-shadow: 0 0 30px rgba(255, 252, 252, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(250, 247, 247, 0.5);
+  }
+}
+#toast {
+  display: none; 
+  min-width: 300px;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 10%;
+  text-align: center;
+  padding: 20px 35px 20px 25px;
+  border-radius: 10px 0 0 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px  rgb(233, 60, 17);
+  border-left: 5px solid #ff6a5a;
+  font-size: 16px;
+}
+#toast .toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#toast .toast-content .icon-toast  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color:#c84d40;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "RobotoMono-Bold", monospace;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #2b86c5, #784ba0, #ff3cac);
+}
+.register, .login {
+    transform: translateY(50px);
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 700px;  /* Giới hạn chiều rộng hình ảnh */
+    max-height: 700px; /* Giới hạn chiều cao hình ảnh */
+
+}
+.form-si {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.form-control {
+    font-size: 28px; /* Tăng kích thước chữ cho nhãn và trường nhập liệu */
+    box-shadow: 1px 1px rgb(162, 161, 161);
+    margin: 20px 0;
+    padding: 10px 0;
+    height: auto;
+}
+button {
+    font-size: 28px;
+}
+
+.notification {
+    position: relative;
+    top: 10px;
+    width:30%;
+    height: max-content;
+}

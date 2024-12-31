@@ -1,0 +1,17 @@
+/* library - folder */
+/* Custom Style */
+.nav-link {
+  color: #090909; /* Màu chữ */
+  font-size: 16px;
+  font-weight: 500;
+}
+.container-library .nav-link {
+  padding: 20px 0;
+  padding-right: 20px;
+}
+.search-bar {
+  margin-right: 20px;
+}
+.library {
+  margin-top: 50px;
+}
